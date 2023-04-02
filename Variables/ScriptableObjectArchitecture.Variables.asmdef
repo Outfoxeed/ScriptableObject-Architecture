@@ -1,0 +1,16 @@
+{
+    "name": "ScriptableObjectArchitecture.Variables",
+    "rootNamespace": "ScriptableObjectArchitecture.Variables",
+    "references": [
+        "GUID:58bb5349b4205474b8ac5224a680d2d6"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

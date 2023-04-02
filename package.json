@@ -1,0 +1,22 @@
+{
+  "name": "com.outfoxeed.scriptableobject-architecture",
+  "version": "1.0.0",
+  "displayName": "ScriptableObject Architecture",
+  "description": "Scripts that can help creating/using a Game Architecture centered around the ScriptableObjects which can 'saves us(developers) pain'",
+  "unity": "2019.1",
+  "unityRelease": "0b5",
+  "dependencies": {},
+ "keywords": [
+    "OutFoxeed", "outfoxeed",
+    "out", "foxed", 
+    "architecture",
+    "scriptable object", "scriptable",
+    "variable", "variable reference",
+    "game event", "runtime set"
+  ],
+  "author": {
+    "name": "Outfoxeed",
+    "email": "outfoxeed@gmail.com",
+    "url": "https://github.com/Outfoxeed/ScriptableObject-Architecture"
+  }
+}

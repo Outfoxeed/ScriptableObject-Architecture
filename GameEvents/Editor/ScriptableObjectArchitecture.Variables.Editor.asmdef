@@ -1,0 +1,19 @@
+{
+    "name": "ScriptableObjectArchitecture.GameEvents.Editor",
+    "rootNamespace": "ScriptableObjectArchitecture.GameEvents.Editor",
+    "references": [
+        "GUID:58bb5349b4205474b8ac5224a680d2d6",
+        "GUID:9e407497f4ca4ffb9a59b0ed6c8627c2"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

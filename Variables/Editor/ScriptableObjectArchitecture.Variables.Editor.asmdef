@@ -1,0 +1,19 @@
+{
+    "name": "ScriptableObjectArchitecture.Variables.Editor",
+    "rootNamespace": "ScriptableObjectArchitecture.Variables.Editor",
+    "references": [
+        "GUID:87205fa8d485ef14c8188374380252b0",
+        "GUID:58bb5349b4205474b8ac5224a680d2d6"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
