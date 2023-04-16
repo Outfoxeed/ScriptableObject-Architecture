@@ -48,7 +48,7 @@ namespace ScriptableObjectArchitecture.Variables
         #region Write
         public T SetValue(T value)
         {
-            if (_value.Equals(value))
+            if (_value != null && _value.Equals(value))
             {
                 return _value;
             }
