@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 
 namespace ScriptableObjectArchitecture.Variables
 {
@@ -7,7 +6,7 @@ namespace ScriptableObjectArchitecture.Variables
     /// ScriptableObject with a generic Read-Only value on which we can subscribe to
     /// </summary>
     /// <typeparam name="T">object</typeparam>
-    public abstract class ReadOnlyVariable<T> : ScriptableObject, IReadOnlyVariable<T>
+    public abstract class ReadOnlyVariable<T> : ScriptableObjectArchitectureObject, IReadOnlyVariable<T>
     {
         public T Value => GetValue();
         public abstract T GetValue();
