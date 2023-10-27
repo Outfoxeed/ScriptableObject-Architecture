@@ -1,7 +1,10 @@
 {
-    "name": "ScriptableObjectArchitecture",
-    "rootNamespace": "ScriptableObjectArchitecture",
-    "references": ["GUID:0447fe5292a847e484514a696365773e","GUID:560b04d1a97f54a4e82edc0cbbb69285"],
+    "name": "ScriptableObjectArchitecture.BaseSos",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8042497e6e064a51af0610abce11cc31",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
