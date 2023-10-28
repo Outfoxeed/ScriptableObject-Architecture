@@ -13,7 +13,7 @@ namespace ScriptableObjectArchitecture.References
     {
         [field: SerializeField] public ReferenceUsage ReferenceUsage { get; private set; }
         [SerializeField] protected T _value;
-        [SerializeField] protected ReadOnlyVariable<T> _readOnlyVariable;
+        [SerializeField] protected Variable<T> _variable;
         [SerializeField] protected VariableInstancer<T> _variableInstancer;
         [SerializeField] protected Constant<T> _constant;
         
@@ -24,7 +24,7 @@ namespace ScriptableObjectArchitecture.References
                 case ReferenceUsage.Value:
                     throw new Exception("Cannot subscribe to a value");
                 case ReferenceUsage.Variable:
-                    return _readOnlyVariable.Subscribe(observer);
+                    return _variable.Subscribe(observer);
                 case ReferenceUsage.Instancer:
                     //TODO:
                     throw new NotImplementedException();
@@ -41,7 +41,7 @@ namespace ScriptableObjectArchitecture.References
         protected T GetValue() => ReferenceUsage switch
         {
             ReferenceUsage.Value => _value,
-            ReferenceUsage.Variable => _readOnlyVariable.Value,
+            ReferenceUsage.Variable => _variable.Value,
             ReferenceUsage.Instancer => throw new NotImplementedException(),
             ReferenceUsage.Constant => _constant.Value,
             _ => throw new InvalidEnumArgumentException()

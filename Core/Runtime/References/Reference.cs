@@ -5,9 +5,8 @@ using UnityEngine;
 namespace ScriptableObjectArchitecture.References
 {
     [System.Serializable]
-    public class Reference<T> : ReadOnlyReference<T>, IReference<T>, ISerializationCallbackReceiver
+    public class Reference<T> : ReadOnlyReference<T>, IReference<T>
     {
-        [SerializeField] private Variable<T> _variable;
         public new T Value
         {
             get => GetValue();
@@ -29,15 +28,6 @@ namespace ScriptableObjectArchitecture.References
                         throw new ArgumentOutOfRangeException();
                 }
             }
-        }
-
-        public void OnBeforeSerialize()
-        {
-            _readOnlyVariable = _variable;
-        }
-
-        public void OnAfterDeserialize()
-        {
         }
     }
 }
