@@ -2,6 +2,6 @@
 
 namespace ScriptableObjectArchitecture.Variables
 {
-    [CreateAssetMenu(fileName = "New Int Reference", menuName = "Variable/Int")]
+    [CreateAssetMenu(menuName = CreateAssetMenuConstants.VariablesPath + "Int")]
     internal class IntVariable : Variable<int> { }
 }

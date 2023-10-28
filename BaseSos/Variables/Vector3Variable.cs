@@ -2,6 +2,6 @@
 
 namespace ScriptableObjectArchitecture.Variables
 {
-    [CreateAssetMenu(fileName = "New Vector3 Reference", menuName = "Variable/Vector3")]
+    [CreateAssetMenu(menuName = CreateAssetMenuConstants.VariablesPath + "Vector3")]
     internal class Vector3Variable : Variable<Vector3> { }
 }

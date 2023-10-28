@@ -2,7 +2,7 @@
 
 namespace ScriptableObjectArchitecture.GameEventListeners
 {
-    [AddComponentMenu("Game Events/Game Events Listeners/Bool Game Event Listener")]
+    [AddComponentMenu(AddComponentMenuConstants.GameEventListenersPath + "Bool Game Event Listener")]
     internal class BoolGameEventListener : GameEventListener<bool>
     {
     }

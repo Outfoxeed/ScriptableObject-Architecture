@@ -2,7 +2,7 @@
 
 namespace ScriptableObjectArchitecture.ReferenceListeners
 {
-    [AddComponentMenu("Variables/Variable Listeners/GameObject Variable Listener")]
+    [AddComponentMenu(AddComponentMenuConstants.ReferenceListenersPath + "GameObject Reference Listener")]
     internal class GameObjectReferenceListener : ReferenceListener<GameObject>
     {
     }

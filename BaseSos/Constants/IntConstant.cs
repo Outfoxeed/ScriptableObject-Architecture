@@ -2,7 +2,7 @@
 
 namespace ScriptableObjectArchitecture.Constants
 {
-    [CreateAssetMenu(menuName = "Constants/Int")]
+    [CreateAssetMenu(menuName = CreateAssetMenuConstants.ConstantsPath + "Int")]
     public class IntConstant : Constant<int>
     {
     }

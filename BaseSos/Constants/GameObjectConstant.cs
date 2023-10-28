@@ -2,7 +2,7 @@
 
 namespace ScriptableObjectArchitecture.Constants
 {
-    [CreateAssetMenu(menuName = "Constants/GameObject")]
+    [CreateAssetMenu(menuName = CreateAssetMenuConstants.ConstantsPath + "GameObject")]
     public class GameObjectConstant : Constant<GameObject>
     {
     }

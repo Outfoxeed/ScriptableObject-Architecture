@@ -2,7 +2,7 @@
 
 namespace ScriptableObjectArchitecture.Constants
 {
-    [CreateAssetMenu(menuName = "Constants/Double")]
+    [CreateAssetMenu(menuName = CreateAssetMenuConstants.ConstantsPath + "Double")]
     public class DoubleConstant : Constant<double>
     {
     }

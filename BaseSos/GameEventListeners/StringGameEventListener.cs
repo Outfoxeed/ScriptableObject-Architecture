@@ -2,7 +2,7 @@
 
 namespace ScriptableObjectArchitecture.GameEventListeners
 {
-    [AddComponentMenu("Game Events/Game Events Listeners/String Game Event Listener")]
+    [AddComponentMenu(AddComponentMenuConstants.GameEventListenersPath + "String Game Event Listener")]
     internal class GameEventStringListener : GameEventListener<string>
     {
     }

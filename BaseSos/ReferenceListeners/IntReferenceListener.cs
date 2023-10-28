@@ -2,7 +2,7 @@
 
 namespace ScriptableObjectArchitecture.ReferenceListeners
 {
-    [AddComponentMenu("Variables/Variable Listeners/Int Variable Listener")]
+    [AddComponentMenu(AddComponentMenuConstants.ReferenceListenersPath + "Int Reference Listener")]
     internal class IntReferenceListener : ReferenceListener<int>
     {
     }

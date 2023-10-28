@@ -2,6 +2,6 @@
 
 namespace ScriptableObjectArchitecture.Variables
 {
-    [CreateAssetMenu(fileName = "New Color Reference", menuName = "Variable/Color")]
+    [CreateAssetMenu(menuName = CreateAssetMenuConstants.VariablesPath + "Color")]
     internal class ColorVariable : Variable<Color> { }
 }

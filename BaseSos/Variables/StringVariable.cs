@@ -2,6 +2,6 @@
 
 namespace ScriptableObjectArchitecture.Variables
 {
-    [CreateAssetMenu(fileName = "New String Reference", menuName = "Variable/String")]
+    [CreateAssetMenu(menuName = CreateAssetMenuConstants.VariablesPath + "String")]
     internal class StringVariable : Variable<string> { }
 }

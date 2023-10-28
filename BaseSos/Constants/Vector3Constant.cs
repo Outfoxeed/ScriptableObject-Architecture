@@ -2,7 +2,7 @@
 
 namespace ScriptableObjectArchitecture.Constants
 {
-    [CreateAssetMenu(menuName = "Constants/Vector3")]
+    [CreateAssetMenu(menuName = CreateAssetMenuConstants.ConstantsPath + "Vector3")]
     public class Vector3Constant : Constant<Vector3>
     {
     }

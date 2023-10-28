@@ -2,7 +2,7 @@
 
 namespace ScriptableObjectArchitecture.Constants
 {
-    [CreateAssetMenu(menuName = "Constants/Bool")]
+    [CreateAssetMenu(menuName = CreateAssetMenuConstants.ConstantsPath + "Bool")]
     public class BoolConstant : Constant<bool>
     {
     }

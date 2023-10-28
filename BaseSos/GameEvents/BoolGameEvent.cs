@@ -2,7 +2,7 @@
 
 namespace ScriptableObjectArchitecture.GameEvents
 {
-    [CreateAssetMenu(fileName = "New Game Event Bool", menuName = "GameEvents/GameEvent (bool)", order = 1)]
+    [CreateAssetMenu(menuName = CreateAssetMenuConstants.GameEventsPath + "Bool")]
     internal class BoolGameEvent : GameEvent<bool>
     {
     }

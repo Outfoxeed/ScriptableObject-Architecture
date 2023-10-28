@@ -2,7 +2,7 @@
 
 namespace ScriptableObjectArchitecture.GameEvents
 {
-    [CreateAssetMenu(fileName = "New Game Event Float", menuName = "GameEvents/Game Event (float)", order = 1)]
+    [CreateAssetMenu(menuName = CreateAssetMenuConstants.GameEventsPath + "Float")]
     internal class FloatGameEvent : GameEvent<float>
     {
     }

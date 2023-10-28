@@ -2,7 +2,7 @@
 
 namespace ScriptableObjectArchitecture.Constants
 {
-    [CreateAssetMenu(menuName = "Constants/Color")]
+    [CreateAssetMenu(menuName = CreateAssetMenuConstants.ConstantsPath + "Color")]
     public class ColorConstant : Constant<Color>
     {
     }

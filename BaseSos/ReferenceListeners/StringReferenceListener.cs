@@ -2,7 +2,7 @@
 
 namespace ScriptableObjectArchitecture.ReferenceListeners
 {
-    [AddComponentMenu("Variables/Variable Listeners/String Variable Listener")]
+    [AddComponentMenu(AddComponentMenuConstants.ReferenceListenersPath + "String Reference Listener")]
     internal class StringReferenceListener : ReferenceListener<string>
     {
     }

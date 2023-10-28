@@ -2,6 +2,6 @@
 
 namespace ScriptableObjectArchitecture.Variables
 {
-    [CreateAssetMenu(fileName = "New Double Reference", menuName = "Variable/Double")]
+    [CreateAssetMenu(menuName = CreateAssetMenuConstants.VariablesPath + "Double")]
     public class DoubleVariable : Variable<double> { }
 }

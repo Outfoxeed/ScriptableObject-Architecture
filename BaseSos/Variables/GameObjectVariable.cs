@@ -2,6 +2,6 @@
 
 namespace ScriptableObjectArchitecture.Variables
 {
-    [CreateAssetMenu(fileName = "New GameObject Reference", menuName = "Variable/GameObject")]
+    [CreateAssetMenu(menuName = CreateAssetMenuConstants.VariablesPath + "GameObject")]
     internal class GameObjectVariable : Variable<GameObject> { }
 }

@@ -2,7 +2,7 @@
 
 namespace ScriptableObjectArchitecture.ReferenceListeners
 {
-    [AddComponentMenu("Variables/Variable Listeners/Float Variable Listener")]
+    [AddComponentMenu(AddComponentMenuConstants.ReferenceListenersPath + "Float Reference Listener")]
     internal class FloatReferenceListener : ReferenceListener<float>
     {
     }

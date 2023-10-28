@@ -2,6 +2,6 @@
 
 namespace ScriptableObjectArchitecture.Variables
 {
-    [CreateAssetMenu(fileName = "New Bool Reference", menuName = "Variable/Bool")]
+    [CreateAssetMenu(menuName = CreateAssetMenuConstants.VariablesPath + "Bool")]
     internal class BoolVariable : Variable<bool> { }
 }

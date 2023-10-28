@@ -2,7 +2,7 @@
 
 namespace ScriptableObjectArchitecture.ReferenceListeners
 {
-    [AddComponentMenu("Variables/Variable Listeners/Bool Variable Listener")]
+    [AddComponentMenu(AddComponentMenuConstants.ReferenceListenersPath + "Bool Reference Listener")]
     internal class BoolReferenceListener : ReferenceListener<bool>
     {
     }

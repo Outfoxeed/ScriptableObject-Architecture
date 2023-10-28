@@ -2,7 +2,7 @@
 
 namespace ScriptableObjectArchitecture.GameEvents
 {
-    [CreateAssetMenu(fileName = "New Game Event String", menuName = "GameEvents/GameEvent (string)", order = 1)]
+    [CreateAssetMenu(menuName = CreateAssetMenuConstants.GameEventsPath + "String")]
     internal class StringGameEvent : GameEvent<string>
     {
     }

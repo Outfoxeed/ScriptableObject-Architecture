@@ -2,7 +2,7 @@
 
 namespace ScriptableObjectArchitecture.Constants
 {
-    [CreateAssetMenu(menuName = "Constants/Float")]
+    [CreateAssetMenu(menuName = CreateAssetMenuConstants.ConstantsPath + "Float")]
     public class FloatConstant : Constant<float>
     {
     }
