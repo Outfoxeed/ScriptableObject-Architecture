@@ -14,5 +14,8 @@
         public const string ListenersFolder = "Listeners/";
         public const string GameEventListenersPath = BasePath + ListenersFolder + "Game Events/";
         public const string ReferenceListenersPath = BasePath + ListenersFolder + "References/";
+
+        public const string InstancersFolder = "Instancers/";
+        public const string VariableInstancersPath = BasePath + InstancersFolder + "Variables/";
     }
 }

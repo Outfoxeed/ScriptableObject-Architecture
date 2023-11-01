@@ -14,6 +14,12 @@ namespace ScriptableObjectArchitecture.ReferenceListeners
         
         protected virtual void OnEnable()
         {
+            if (!_variableRef.IsValid())
+            {
+                Debug.LogError($"Given variable reference is not valid. Cancelled subscription", this);
+                return;
+            }
+            
             _disposable?.Dispose();
             _disposable = _variableRef.Subscribe(_response.Invoke);
         }

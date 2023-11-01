@@ -1,10 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
 using ScriptableObjectArchitecture.Constants;
-using ScriptableObjectArchitecture.VariableInstancers;
+using ScriptableObjectArchitecture.Instancers;
 using ScriptableObjectArchitecture.Variables;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace ScriptableObjectArchitecture.References
 {
@@ -26,8 +25,7 @@ namespace ScriptableObjectArchitecture.References
                 case ReferenceUsage.Variable:
                     return _variable.Subscribe(observer);
                 case ReferenceUsage.Instancer:
-                    //TODO:
-                    throw new NotImplementedException();
+                    return _variableInstancer.Subscribe(observer);
                 case ReferenceUsage.Constant:
                     observer.OnNext(_constant.Value);
                     Debug.LogWarning($"Cannot subscribe to a constant. The callback has still been called");
@@ -42,8 +40,17 @@ namespace ScriptableObjectArchitecture.References
         {
             ReferenceUsage.Value => _value,
             ReferenceUsage.Variable => _variable.Value,
-            ReferenceUsage.Instancer => throw new NotImplementedException(),
+            ReferenceUsage.Instancer => _variableInstancer.Value,
             ReferenceUsage.Constant => _constant.Value,
+            _ => throw new InvalidEnumArgumentException()
+        };
+
+        public bool IsValid() => ReferenceUsage switch
+        {
+            ReferenceUsage.Value => true,
+            ReferenceUsage.Variable => _variable != null,
+            ReferenceUsage.Instancer => _variableInstancer != null,
+            ReferenceUsage.Constant => _constant != null,
             _ => throw new InvalidEnumArgumentException()
         };
 

@@ -12,8 +12,8 @@ namespace ScriptableObjectArchitecture.Variables
     /// <typeparam name="T">object</typeparam>
     public abstract class Variable<T> : ReadOnlyVariable<T>, IVariable<T>
     {
-        [SerializeField] private ReactiveProperty<T> _property;
-        [SerializeField] private ReadOnlyReference<T> _defaultValue;
+        [SerializeField] private ReactiveProperty<T> _property = new();
+        [SerializeField] private ReadOnlyReference<T> _defaultValue = new();
 
         public new T Value
         {

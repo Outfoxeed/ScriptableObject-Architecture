@@ -3,5 +3,5 @@
 namespace ScriptableObjectArchitecture.Variables
 {
     [CreateAssetMenu(menuName = CreateAssetMenuConstants.VariablesPath + "Float")]
-    public class FloatVariable : Variable<float> { }
+    internal class FloatVariable : Variable<float> { }
 }

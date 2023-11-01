@@ -38,7 +38,7 @@ namespace ScriptableObjectArchitecture.Editor.References
             public override string DisplayName { get => "Use Variable Instancer"; }
         }
 
-        private readonly UsageData[] _usages = new UsageData[4] { new UsageValue(), new UsageConstant(), new UsageVariable(), new UsageVariableInstancer() };
+        private readonly UsageData[] _usages = new UsageData[4] { new UsageValue(), new UsageVariable(), new UsageVariableInstancer(), new UsageConstant() };
 
         protected override UsageData[] GetUsages(SerializedProperty prop = null) => _usages;
     }

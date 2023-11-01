@@ -4,7 +4,7 @@ namespace ScriptableObjectArchitecture.Utils
 {
     /// <summary>
     /// Logger singleton class used for logging only in UnityEditor or Development build
-    /// By the usage of the Logger.Instance?.Log, we can avoid string creation
+    /// By the usage of the Logger.Instance?.Log, we can avoid string creation in heap
     /// </summary>
     public class Logger
     {
