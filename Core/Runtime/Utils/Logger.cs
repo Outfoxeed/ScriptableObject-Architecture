@@ -8,6 +8,7 @@ namespace ScriptableObjectArchitecture.Utils
     /// </summary>
     public class Logger
     {
+        private const string LOGPrefix = "[SO ARCH]";
         public static Logger Instance
         {
             get
@@ -26,7 +27,7 @@ namespace ScriptableObjectArchitecture.Utils
         }
 
         private static Logger _instance;
-
+        
         public void Log(string message, bool log = true)
         {
             if (!log)
@@ -34,7 +35,27 @@ namespace ScriptableObjectArchitecture.Utils
                 return;
             }
             
-            Debug.Log(message);
+            Debug.Log($"{LOGPrefix} {message}");
+        }
+
+        public void LogWarning(string message, bool log = true)
+        {
+            if (!log)
+            {
+                return;
+            }
+            
+            Debug.LogWarning($"{LOGPrefix} {message}");
+        }
+        
+        public void LogError(string message, bool log = true)
+        {
+            if (!log)
+            {
+                return;
+            }
+            
+            Debug.LogError($"{LOGPrefix} {message}");
         }
     }
 }
