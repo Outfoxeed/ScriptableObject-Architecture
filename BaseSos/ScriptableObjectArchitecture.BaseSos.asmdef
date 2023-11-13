@@ -2,8 +2,8 @@
     "name": "ScriptableObjectArchitecture.BaseSos",
     "rootNamespace": "",
     "references": [
-        "GUID:8042497e6e064a51af0610abce11cc31",
-        "GUID:560b04d1a97f54a4e82edc0cbbb69285"
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:ba091742711de604db537d50887391a6"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

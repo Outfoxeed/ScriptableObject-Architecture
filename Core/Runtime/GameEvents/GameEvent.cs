@@ -15,7 +15,7 @@ namespace ScriptableObjectArchitecture.GameEvents
 
         public bool Raise(T parameter)
         {
-            Logger.Instance?.Log($"'{this.name}' GameEvent raised with parameter '{parameter.ToString()}'");
+            Logger.Instance?.Log($"'{this.name}' GameEvent raised with parameter '{parameter}'");
             return _reactiveCommand.Execute(parameter);
         }
 
