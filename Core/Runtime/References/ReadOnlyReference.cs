@@ -10,7 +10,7 @@ namespace ScriptableObjectArchitecture.References
     [System.Serializable]
     public class ReadOnlyReference<T> : IReadOnlyReference<T>
     {
-        [field: SerializeField] public ReferenceUsage ReferenceUsage { get; private set; }
+        [field: SerializeField] public ReferenceUsage ReferenceUsage { get; protected set; }
         [SerializeField] protected T _value;
         [SerializeField] protected Variable<T> _variable;
         [SerializeField] protected VariableInstancer<T> _variableInstancer;
@@ -21,15 +21,14 @@ namespace ScriptableObjectArchitecture.References
             switch (ReferenceUsage)
             {
                 case ReferenceUsage.Value:
-                    throw new Exception("Cannot subscribe to a value");
+                case ReferenceUsage.Constant:
+                    observer.OnNext(ReferenceUsage is ReferenceUsage.Value ? _value : _constant.Value);
+                    Debug.LogWarning($"Cannot subscribe to a {ReferenceUsage.ToString().Split('.')[^1]}. The callback has still been called");
+                    return null!;
                 case ReferenceUsage.Variable:
                     return _variable.Subscribe(observer);
                 case ReferenceUsage.Instancer:
                     return _variableInstancer.Subscribe(observer);
-                case ReferenceUsage.Constant:
-                    observer.OnNext(_constant.Value);
-                    Debug.LogWarning($"Cannot subscribe to a constant. The callback has still been called");
-                    throw new Exception("Cannot subscribe to a constant");
                 default:
                     throw new ArgumentOutOfRangeException();
             }

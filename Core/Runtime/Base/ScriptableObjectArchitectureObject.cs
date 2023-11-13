@@ -5,7 +5,6 @@ namespace ScriptableObjectArchitecture.Base
     /// <summary>
     /// Base class of the ScriptableObject used in the SO Architecture
     /// </summary>
-    //TODO: RENAME
     public abstract class ScriptableObjectArchitectureObject : ScriptableObject
     {
 #if UNITY_EDITOR

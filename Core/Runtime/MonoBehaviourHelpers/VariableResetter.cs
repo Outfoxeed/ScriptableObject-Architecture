@@ -7,8 +7,6 @@ namespace ScriptableObjectArchitecture.MonoBehaviourHelpers
     /// <summary>
     /// Resets all the ScriptableObject inheriting from IReset located in the Resources
     /// </summary>
-    //TODO: editor icon
-    // [EditorIcon("atom-icon-delicate")]
     public class VariableResetter : MonoBehaviour
     {
         public void Awake()
