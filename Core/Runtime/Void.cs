@@ -1,4 +1,4 @@
-﻿namespace ScriptableObjectArchitecture.Utils
+﻿namespace ScriptableObjectArchitecture
 {
     public struct Void
     {
