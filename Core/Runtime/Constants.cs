@@ -6,10 +6,7 @@
         public const string ConstantsPath = BasePath + "Constants/";
         public const string VariablesPath = BasePath + "Variables/";
         public const string GameEventsPath = BasePath + "Game Events/";
-
-        public const string RuntimeSetsFolder = "Runtime Sets/";
-        public const string ValueRuntimeSetsPath = BasePath + RuntimeSetsFolder + "Values Runtime Sets/";
-        public const string VariableRuntimeSetsPath = BasePath + RuntimeSetsFolder + "Variable Runtime Sets/";
+        public const string RuntimeSetsPath = BasePath + "Runtime Sets/";
     }
 
     public static class AddComponentMenuConstants

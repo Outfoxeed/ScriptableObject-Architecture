@@ -3,6 +3,7 @@ using ScriptableObjectArchitecture.Constants;
 using ScriptableObjectArchitecture.Instancers;
 using ScriptableObjectArchitecture.Variables;
 using UnityEngine;
+using Logger = ScriptableObjectArchitecture.Utils.Logger;
 
 namespace ScriptableObjectArchitecture.References
 {
@@ -32,7 +33,7 @@ namespace ScriptableObjectArchitecture.References
                 }
             }
         }
-        
+
         public Reference(T value)
         {
             ReferenceUsage = ReferenceUsage.Value;
