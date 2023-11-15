@@ -61,6 +61,12 @@ namespace ScriptableObjectArchitecture.Tests.References
             reference.Value = newValue;
             Assert.AreEqual(reference.Value, newValue);
             Assert.AreEqual(count, expectedCount);
+            
+            // Test SetValueAndForceNotify
+            // -> callback should not been raised as we cannot subscribe to a value
+            reference.SetValueAndForceNotify(defaultValue);
+            Assert.AreEqual(reference.Value, defaultValue);
+            Assert.AreEqual(count, expectedCount);
         }
     }
 }

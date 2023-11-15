@@ -74,9 +74,21 @@ namespace ScriptableObjectArchitecture.Tests.References
             expectedCount++;
             Assert.AreEqual(count, expectedCount);
             
-            // Test value change from variable after subscription
+            // Test value change from variable instancer after subscription
             // -> callback should be raised
             variableInstancer.Value = defaultValue;
+            expectedCount++;
+            Assert.AreEqual(count, expectedCount);
+            
+            // Test SetValueAndForceNotify from reference after subscription
+            // -> callback should be raised
+            reference.SetValueAndForceNotify(defaultValue);
+            expectedCount++;
+            Assert.AreEqual(count, expectedCount);
+            
+            // Test SetValueAndForceNotify from variable instancer after subscription
+            // -> callback should be raised
+            variableInstancer.SetValueAndForceNotify(defaultValue);
             expectedCount++;
             Assert.AreEqual(count, expectedCount);
             

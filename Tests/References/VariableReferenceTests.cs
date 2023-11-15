@@ -77,6 +77,12 @@ namespace ScriptableObjectArchitecture.Tests.References
             expectedCount++;
             Assert.AreEqual(count, expectedCount);
             
+            // Test SetValueAndForceNotify after subscription
+            // -> callback should be raised
+            reference.SetValueAndForceNotify(defaultValue);
+            expectedCount++;
+            Assert.AreEqual(count, expectedCount);
+            
             // Test value change from refernce after dispose
             // -> callback should not be raised
             disposable.Dispose();
@@ -88,6 +94,8 @@ namespace ScriptableObjectArchitecture.Tests.References
             // -> callback should not be raised
             variable.Value = defaultValue;
             Assert.AreEqual(count, expectedCount);
+            
+            
         }
     }
 }

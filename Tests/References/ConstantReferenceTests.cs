@@ -64,6 +64,10 @@ namespace ScriptableObjectArchitecture.Tests.References
             // -> callback should still have been raised
             int expectedCount = 1;
             Assert.AreEqual(count, expectedCount);
+
+            // Test reference set methods
+            Assert.Throws<Exception>(() => reference.Value = constantValue);
+            Assert.Throws<Exception>(() => reference.SetValueAndForceNotify(constantValue));
         }
     }
 }

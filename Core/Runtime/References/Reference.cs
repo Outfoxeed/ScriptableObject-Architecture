@@ -33,6 +33,28 @@ namespace ScriptableObjectArchitecture.References
                 }
             }
         }
+        
+        public void SetValueAndForceNotify(T value)
+        {
+            switch (ReferenceUsage)
+            {
+                case ReferenceUsage.Value:
+                    Logger.Instance?.Log($"Cannot force notify on a {ReferenceUsage.ToString().Split('.')[^1]}. " +
+                                         "The value has still been changed");
+                    _value = value;
+                    break;
+                case ReferenceUsage.Variable:
+                    _variable.SetValueAndForceNotify(value);
+                    break;
+                case ReferenceUsage.Instancer:
+                    _variableInstancer.SetValueAndForceNotify(value);
+                    break;
+                case ReferenceUsage.Constant:
+                    throw new Exception("Cannot change the value of a constant");
+                default:
+                    throw new ArgumentException();
+            }
+        }
 
         public Reference(T value)
         {
@@ -57,5 +79,6 @@ namespace ScriptableObjectArchitecture.References
             ReferenceUsage = ReferenceUsage.Constant;
             _constant = constant;
         }
+
     }
 }
