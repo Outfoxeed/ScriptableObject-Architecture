@@ -1,8 +1,13 @@
-﻿
-namespace ScriptableObjectArchitecture.GameEvents
+﻿namespace ScriptableObjectArchitecture.GameEvents
 {
-    public interface IGameEvent<T> : IReadOnlyGameEvent<T>
+    public interface IGameEvent
     {
-        public bool Raise(T parameter);
+#if UNITY_EDITOR
+        bool RaiseWithDebugParameter();
+#endif
+    }
+    public interface IGameEvent<T> : IGameEvent, IReadOnlyGameEvent<T>
+    {
+        bool Raise(T parameter);
     }
 }

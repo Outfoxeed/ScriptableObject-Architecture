@@ -1,11 +1,17 @@
 ﻿using System;
-using ScriptableObjectArchitecture.Utils;
 using UniRx;
+using UnityEngine;
+using Logger = ScriptableObjectArchitecture.Utils.Logger;
 
 namespace ScriptableObjectArchitecture.GameEvents
 {
     public abstract class GameEvent<T> : ReadOnlyGameEvent<T>, IGameEvent<T>
     {
+#if UNITY_EDITOR
+        [SerializeField] private T _debugRaiseParameter;
+        public virtual bool RaiseWithDebugParameter() => Raise(_debugRaiseParameter);
+#endif
+        
         private ReactiveCommand<T> _reactiveCommand = new ReactiveCommand<T>();
         public override IDisposable Subscribe(IObserver<T> observer)
         {

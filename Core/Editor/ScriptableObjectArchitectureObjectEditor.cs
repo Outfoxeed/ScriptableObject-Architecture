@@ -13,11 +13,11 @@ namespace ScriptableObjectArchitecture.Editor
         {
             serializedObject.Update();
             DrawDebugButton();
-            DrawPropertiesExcluding(serializedObject, new []{"m_Script", "<DebugMode>k__BackingField"});
+            DrawPropertiesExcluding(serializedObject, GetPropertiesToExclude());
             serializedObject.ApplyModifiedProperties();
         }
 
-        private void DrawDebugButton()
+        protected void DrawDebugButton()
         {
             if (target is not ScriptableObjectArchitectureObject soArchObject)
             {
@@ -43,5 +43,7 @@ namespace ScriptableObjectArchitecture.Editor
                 fieldInfo.SetValue(soArchObject, !debugMode);
             }
         }
+
+        protected virtual string[] GetPropertiesToExclude() => new[] { "m_Script", "<DebugMode>k__BackingField" };
     }
 }
