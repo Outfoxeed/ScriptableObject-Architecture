@@ -1,4 +1,5 @@
-﻿using ScriptableObjectArchitecture.Variables;
+﻿using ScriptableObjectArchitecture.Base;
+using ScriptableObjectArchitecture.Variables;
 using UnityEditor;
 using UnityEngine;
 using Logger = ScriptableObjectArchitecture.Utils.Logger;
@@ -17,7 +18,7 @@ namespace ScriptableObjectArchitecture.Editor.Editor.Variables
             {
                 string errorMsg = $"Cannot find SerializedProperty of name '{PropertyName}'";
                 GUILayout.Label(errorMsg);
-                Logger.Instance?.LogError(errorMsg);
+                Logger.Instance?.Log(target as ScriptableObjectArchitectureObject, Logger.LogType.Error, errorMsg);
             }
 
             spProperty.isExpanded = true;

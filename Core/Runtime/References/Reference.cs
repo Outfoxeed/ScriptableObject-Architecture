@@ -39,8 +39,9 @@ namespace ScriptableObjectArchitecture.References
             switch (ReferenceUsage)
             {
                 case ReferenceUsage.Value:
-                    Logger.Instance?.Log($"Cannot force notify on a {ReferenceUsage.ToString().Split('.')[^1]}. " +
-                                         "The value has still been changed");
+                    Logger.Instance?.Log(Logger.LogType.Warning,
+                        $"Cannot force notify on a {ReferenceUsage.ToString().Split('.')[^1]}. " + 
+                        "The value has still been changed");
                     _value = value;
                     break;
                 case ReferenceUsage.Variable:

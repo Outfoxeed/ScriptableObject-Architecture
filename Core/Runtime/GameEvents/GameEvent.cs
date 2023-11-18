@@ -15,13 +15,13 @@ namespace ScriptableObjectArchitecture.GameEvents
         private ReactiveCommand<T> _reactiveCommand = new ReactiveCommand<T>();
         public override IDisposable Subscribe(IObserver<T> observer)
         {
-            Logger.Instance?.Log($"'{this.name}' received a new subscription");
+            Logger.Instance?.Log(this, $"'{this.name}' received a new subscription");
             return _reactiveCommand.Subscribe(observer);
         }
 
         public bool Raise(T parameter)
         {
-            Logger.Instance?.Log($"'{this.name}' GameEvent raised with parameter '{parameter}'");
+            Logger.Instance?.Log(this, $"'{this.name}' GameEvent raised with parameter '{parameter}'");
             return _reactiveCommand.Execute(parameter);
         }
 

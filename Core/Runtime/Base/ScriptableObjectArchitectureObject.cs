@@ -9,7 +9,7 @@ namespace ScriptableObjectArchitecture.Base
     {
 #if UNITY_EDITOR
         //TODO: could be moved into Variable and GameEvent or a ReactiveScriptableObjectArchitectureObject
-        [field: SerializeField] protected bool DebugMode { get; private set; }
+        [field: SerializeField] public bool DebugMode { get; protected set; }
         [SerializeField, TextArea(3, 10)] private string _developerDescription;
 #endif
     }

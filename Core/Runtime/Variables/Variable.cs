@@ -20,7 +20,7 @@ namespace ScriptableObjectArchitecture.Variables
             get => _property.Value;
             set
             {
-                Logger.Instance?.Log($"'{this.name}' value set to {value}", DebugMode);
+                Logger.Instance?.Log(this, $"'{this.name}' value set to {value}");
                 _property.Value = value;
             }
         }
@@ -28,14 +28,14 @@ namespace ScriptableObjectArchitecture.Variables
         protected override T GetValue() => _property.Value;
         public T SetValueAndForceNotify(T value)
         {
-            Logger.Instance?.Log($"'{this.name}' value set to {value}. <color=yellow>Notify forced</color>", DebugMode);
+            Logger.Instance?.Log(this, $"'{this.name}' value set to {value}. <color=yellow>Notify forced</color>");
             _property.SetValueAndForceNotify(value);
             return _property.Value;
         }
 
         public override IDisposable Subscribe(IObserver<T> observer)
         {
-            Logger.Instance?.Log($"'{this.name}' variable received a new subscription \nvalue: {_property.Value}", DebugMode);
+            Logger.Instance?.Log(this, $"'{this.name}' variable received a new subscription \nvalue: {_property.Value}");
             return _property.Subscribe(observer);
         }
 
