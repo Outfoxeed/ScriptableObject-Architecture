@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using ScriptableObjectArchitecture.Instancers;
+using ScriptableObjectArchitecture.VariableInstancers;
 using UnityEngine;
 
 namespace ScriptableObjectArchitecture.Tests.ConcreteTypesFinderTests

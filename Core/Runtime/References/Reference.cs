@@ -1,6 +1,6 @@
 ﻿using System;
 using ScriptableObjectArchitecture.Constants;
-using ScriptableObjectArchitecture.Instancers;
+using ScriptableObjectArchitecture.VariableInstancers;
 using ScriptableObjectArchitecture.Variables;
 using UnityEngine;
 using Logger = ScriptableObjectArchitecture.Utils.Logger;

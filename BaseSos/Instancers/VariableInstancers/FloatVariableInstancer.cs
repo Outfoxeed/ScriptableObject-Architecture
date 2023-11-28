@@ -1,5 +1,5 @@
 ﻿using ScriptableObjectArchitecture;
-using ScriptableObjectArchitecture.Instancers;
+using ScriptableObjectArchitecture.VariableInstancers;
 using UnityEngine;
 
 namespace BaseSos.Instancers.VariableInstancers
