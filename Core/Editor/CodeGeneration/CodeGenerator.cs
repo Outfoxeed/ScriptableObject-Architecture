@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using ScriptableObjectArchitecture.Constants;
 using ScriptableObjectArchitecture.GameEventListeners;
 using ScriptableObjectArchitecture.GameEvents;
-using ScriptableObjectArchitecture.VariableInstancers;
 using ScriptableObjectArchitecture.ReferenceListeners;
 using ScriptableObjectArchitecture.ReferenceSetters;
 using ScriptableObjectArchitecture.RuntimeSets;
+using ScriptableObjectArchitecture.VariableInstancers;
 using ScriptableObjectArchitecture.Variables;
 using UnityEditor;
 using UnityEngine;
 
 namespace ScriptableObjectArchitecture.Editor.CodeGeneration
 {
-    public class ScriptGenerator
+    public static class CodeGenerator
     {
         private const string GeneratedScriptsFolderName = "GENERATED_SCRIPTS_SOArch/";
         
@@ -25,7 +24,7 @@ namespace ScriptableObjectArchitecture.Editor.CodeGeneration
         
         private const string DefaultGeneratedScriptNamespaceName = "DefaultGeneratedScriptNamespace";
         
-        private string GeneratedScriptsFolderPath
+        private static string GeneratedScriptsFolderPath
         {
             get
             {
@@ -38,7 +37,7 @@ namespace ScriptableObjectArchitecture.Editor.CodeGeneration
             }
         }
 
-        private string ScriptFolderPath
+        private static string ScriptFolderPath
         {
             get
             {
@@ -51,10 +50,10 @@ namespace ScriptableObjectArchitecture.Editor.CodeGeneration
             }
         }
 
-        private string _generatedScriptsFolderPath;
-        private string _scriptFolderPath;
+        private static string _generatedScriptsFolderPath;
+        private static string _scriptFolderPath;
 
-        public void Generate(string targetTypeName, string customNamespaceName)
+        public static void Generate(string targetTypeName, string customNamespaceName)
         {
             if (string.IsNullOrEmpty(targetTypeName))
             {
@@ -163,7 +162,7 @@ namespace ScriptableObjectArchitecture.Editor.CodeGeneration
         /// </summary>
         /// <param name="parentClassName">Name of the class the new script inherit from</param>
         /// <param name="args">Args used for replacing the parameters in the template</param>
-        private void GenerateScript(string templatePath, string folderResultPath, string parentClassName, Dictionary<string, string> args)
+        private static void GenerateScript(string templatePath, string folderResultPath, string parentClassName, Dictionary<string, string> args)
         {
             args["ParentClassName"] = parentClassName;
             File.WriteAllText(folderResultPath + $"{args["TargetTypeName"]}{parentClassName}.cs", GenerateScriptText(templatePath, args));
@@ -175,7 +174,7 @@ namespace ScriptableObjectArchitecture.Editor.CodeGeneration
         /// <param name="absoluteTemplatePath">Absolute path of the template</param>
         /// <param name="args">The values to replace in the template text</param>
         /// <returns>The template text with the values replaced</returns>
-        private string GenerateScriptText(string absoluteTemplatePath, IReadOnlyDictionary<string, string> args)
+        private static string GenerateScriptText(string absoluteTemplatePath, IReadOnlyDictionary<string, string> args)
         {
             string result = File.ReadAllText(absoluteTemplatePath);
             if (string.IsNullOrEmpty(absoluteTemplatePath))
@@ -200,9 +199,9 @@ namespace ScriptableObjectArchitecture.Editor.CodeGeneration
             return result;
         }
 
-        private string GetScriptFolderPath()
+        private static string GetScriptFolderPath()
         {
-            string scriptName = $"{typeof(ScriptGenerator).ToString().Split('.')[^1]}.cs";
+            string scriptName = $"{typeof(CodeGenerator).ToString().Split('.')[^1]}.cs";
             string[] res = System.IO.Directory.GetFiles(Application.dataPath, scriptName, SearchOption.AllDirectories);
             if (res.Length == 0)
             {
@@ -212,13 +211,6 @@ namespace ScriptableObjectArchitecture.Editor.CodeGeneration
 
             string path = res[0].Replace(scriptName, "").Replace("\\", "/");
             return path;
-        }
-    }
-
-    public class ScriptGenerationException : Exception
-    {
-        public ScriptGenerationException(string message) : base(message)
-        {
         }
     }
 }
