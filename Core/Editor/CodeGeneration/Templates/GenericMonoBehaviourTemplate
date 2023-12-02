@@ -1,0 +1,11 @@
+﻿using UnityEngine;
+using ScriptableObjectArchitecture;
+using ScriptableObjectArchitecture.$ParentClassName$s;
+
+namespace $NamespaceName$
+{
+    [AddComponentMenu(AddComponentMenuConstants.$ParentClassName$sPath + "$TargetTypeName$ $ParentClassName$")]
+    internal class $TargetTypeName$$ParentClassName$ : $ParentClassName$<$TargetTypeFullName$>
+    {
+    }
+}

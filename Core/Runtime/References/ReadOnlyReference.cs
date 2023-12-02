@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using ScriptableObjectArchitecture.Constants;
-using ScriptableObjectArchitecture.Instancers;
+using ScriptableObjectArchitecture.VariableInstancers;
 using ScriptableObjectArchitecture.Variables;
 using UnityEngine;
 

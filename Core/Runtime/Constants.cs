@@ -22,4 +22,10 @@
         public const string InstancersFolder = "Instancers/";
         public const string VariableInstancersPath = BasePath + InstancersFolder + "Variables/";
     }
+
+    public static class MenuItemConstants
+    {
+        public const string MenuItemFolder = "SO Arch/";
+        public const string CodeGeneratorWindow = MenuItemFolder + "Code Generator";
+    }
 }

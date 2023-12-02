@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using NUnit.Framework;
-using ScriptableObjectArchitecture.Instancers;
+using ScriptableObjectArchitecture.VariableInstancers;
 using ScriptableObjectArchitecture.References;
 using ScriptableObjectArchitecture.Variables;
 using UniRx;

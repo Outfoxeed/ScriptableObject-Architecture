@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using NUnit.Framework;
-using ScriptableObjectArchitecture.Instancers;
+using ScriptableObjectArchitecture.VariableInstancers;
 using ScriptableObjectArchitecture.Variables;
 using UnityEngine;
 using UnityEngine.TestTools;

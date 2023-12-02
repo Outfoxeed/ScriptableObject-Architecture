@@ -1,8 +1,8 @@
 ﻿using System;
+using ScriptableObjectArchitecture.Instancers;
 using ScriptableObjectArchitecture.Variables;
-using UnityEngine;
 
-namespace ScriptableObjectArchitecture.Instancers
+namespace ScriptableObjectArchitecture.VariableInstancers
 {
     /// <summary>
     /// MonoBehaviour class faking the job of a Variable by instantiating a concrete Variable at Awake
