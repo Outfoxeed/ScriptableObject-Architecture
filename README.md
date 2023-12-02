@@ -155,7 +155,8 @@ The window is openable from the MenuItem "SO Arch/Code Generation".
 ![Code Generation Window](Documentation/CodeGenerationWindow.png)
 
 #### Example
-If you have a script Player and you want to create Variable using your Player type. You can open the Code Generation Window, type the name 'Player' into the "Target Type Name" field.
+If you have a script Player and you want to create Variable using your Player type. You can open the Code Generation Window, type the name 'Player' into the "Target Type Name" field. 
+<br/>Hit the 'Generate' button and all the scripts are getting generated into a folder in the Assets. 
 
 If your script is contained inside a namespace, precise the namespace name (ex: 'MyGameNamespace.Player' where 'MyGameNamespace' is the name of the namespace in which 'Player' is contained) 
 
