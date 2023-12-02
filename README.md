@@ -30,9 +30,10 @@ This repository is heavily inspired from other packages offering similar feature
     - [RuntimeSet SO](#-runtimeset-scriptableobject)
     - [Constant SO](#-constant-scriptableobject)
     - [Instancers](#-instancers)
-3. [Concepts](#-concepts)
+3. [Code Generation](#-code-generation)
+4. [Concepts](#-concepts)
     - [Subscriptions](#-subscriptions)
-4. [Future](#-future)
+5. [Future](#-future)
 
 ---
 ## 🔵 IMPORTING
@@ -145,6 +146,18 @@ The instantiated Variable can be used through the Instancer and References.
 <br/>
 When playing in Editor, you can see the instantiated SO's detail in the inspector of the Instancer. 
 
+---
+## 🔵 Code Generation
+This package contains a simple window allowing you to generate the scripts needed for the [Variables](#⚪-variable-scriptableobject)/[GameEvents](#⚪-gameevent-scriptableobject)/[Constants](#⚪-constant-scriptableobject)/[RuntimeSets](#⚪-runtimeset-scriptableobject)/etc... as well as the different Listeners/Setters/Injectors/etc... with a wanted type.
+
+The window is openable from the MenuItem "SO Arch/Code Generation".
+
+![Code Generation Window](Documentation/CodeGenerationWindow.png)
+
+#### Example
+If you have a script Player and you want to create Variable using your Player type. You can open the Code Generation Window, type the name 'Player' into the "Target Type Name" field.
+
+If your script is contained inside a namespace, precise the namespace name (ex: 'MyGameNamespace.Player' where 'MyGameNamespace' is the name of the namespace in which 'Player' is contained) 
 
 ---
 ## 🔵 Concepts
@@ -191,11 +204,6 @@ public class GameEventListener<T> : MonoBehaviour, IGameEventListener<T>
 ---
 ## 🔵 FUTURE
 TODO:
-- Script Generation (Variables/RerenceListener/ReferenceSetter/GameEvent/GameEventListener/...)
 - RuntimeSetInjector (MonoBehaviour) -> Add reference to wanted runtime set OnEnable and remove it OnDisable
 - RuntimeSetListener (MonoBheaviour) -> Allow to easily attach a UnityEvent on one of the event of the RuntimeSet
 - GameEventInstancer (MonoBehaviour) -> Creates an instance of a GameEvent ScriptableObject
-
-
-In Development:
-- Script Generation
