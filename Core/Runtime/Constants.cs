@@ -1,6 +1,6 @@
 ﻿namespace ScriptableObjectArchitecture
 {
-    public static class CreateAssetMenuConstants
+    public static partial class CreateAssetMenuConstants
     {
         public const string BasePath = "SO Arch/";
         public const string ConstantsPath = BasePath + "Constants/";
