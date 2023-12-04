@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using ScriptableObjectArchitecture.Constants;
@@ -9,6 +10,7 @@ using ScriptableObjectArchitecture.ReferenceSetters;
 using ScriptableObjectArchitecture.RuntimeSets;
 using ScriptableObjectArchitecture.VariableInstancers;
 using ScriptableObjectArchitecture.Variables;
+//using ScriptableObjectArchitecture.RuntimeSetInjectors;
 using UnityEditor;
 using UnityEngine;
 
@@ -53,29 +55,27 @@ namespace ScriptableObjectArchitecture.Editor.CodeGeneration
         private static string _generatedScriptsFolderPath;
         private static string _scriptFolderPath;
 
-        public static void Generate(string targetTypeName, string customNamespaceName)
+        public static void Generate(string targetTypeFullName, string targetTypeDisplayName = null,
+            string customNamespaceName = null, bool refreshAssetDatabase = true)
         {
-            if (string.IsNullOrEmpty(targetTypeName))
+            if (string.IsNullOrEmpty(targetTypeFullName))
             {
-                throw new ScriptGenerationException("targetTypeName is null");
+                throw new ScriptGenerationException($"{nameof(targetTypeFullName)} is null");
             }
 
+            string namespaceName = string.IsNullOrEmpty(customNamespaceName)
+                ? DefaultGeneratedScriptNamespaceName
+                : customNamespaceName;
+            string targetTypeName = string.IsNullOrEmpty(targetTypeDisplayName)
+                ? targetTypeFullName.Split('.')[^1]
+                : targetTypeDisplayName;
+            targetTypeName = string.Concat(targetTypeName[0].ToString().ToUpper(), targetTypeName.Substring(1));
+            
             Dictionary<string, string> scriptGenerationArgs = new Dictionary<string, string>()
             {
-                {
-                    "NamespaceName", string.IsNullOrEmpty(customNamespaceName)
-                        ? DefaultGeneratedScriptNamespaceName
-                        : customNamespaceName
-                },
-                {
-                    "TargetTypeName", targetTypeName.Split('.')[^1]
-                },
-                {
-                    "TargetTypeFullName", targetTypeName
-                },
-                {
-                    "ParentClassName", "Variable"
-                }
+                { "NamespaceName", namespaceName },
+                { "TargetTypeName", targetTypeName },
+                { "TargetTypeFullName", targetTypeFullName },
             };
             
             // Generate result folder if not created
@@ -92,7 +92,7 @@ namespace ScriptableObjectArchitecture.Editor.CodeGeneration
                 parentClassName: GetClassName(typeof(Variable<>)),
                 args: scriptGenerationArgs
             );
-            
+
             // GameEvent
             GenerateScript(
                 templatePath: ScriptFolderPath + SoArchObjectTemplateRelativePath,
@@ -148,8 +148,19 @@ namespace ScriptableObjectArchitecture.Editor.CodeGeneration
                 parentClassName: GetClassName(typeof(ReferenceSetter<>)),
                 args: scriptGenerationArgs
             );
+            
+            // RuntimeSet Injector
+            //GenerateScript(
+            //    templatePath: ScriptFolderPath + SoArchMonoBehaviourTemplateRelativePath,
+            //    folderResultPath: folderPath,
+            //    parentClassName: GetClassName(typeof(RuntimeSetInjector<>)),
+            //    args: scriptGenerationArgs
+            //);
 
-            AssetDatabase.Refresh();
+            if (refreshAssetDatabase)
+            {
+                AssetDatabase.Refresh();
+            }
         }
 
         private static string GetClassName(System.Type type)

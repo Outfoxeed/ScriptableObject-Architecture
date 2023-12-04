@@ -18,6 +18,7 @@
 
         public const string SettersFolder = "Setters/";
         public const string ReferenceSettersPath = BasePath + SettersFolder + "References/";
+        public const string RuntimeSetInjectorsPath = BasePath + SettersFolder + "Runtime Sets Injectors/";
 
         public const string InstancersFolder = "Instancers/";
         public const string VariableInstancersPath = BasePath + InstancersFolder + "Variables/";

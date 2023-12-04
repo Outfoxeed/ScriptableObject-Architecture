@@ -7,7 +7,7 @@ namespace ScriptableObjectArchitecture.Tests.ConcreteTypesFinderTests
     public class GameEventTypesFinderTests : ConcreteTypesFinderTestBase
     {
         [Test]
-        public void FindGameEvent() => FindClass(typeof(GameEvent<Void>), "GameEvent");
+        public void FindGameEvent() => FindClass(typeof(GameEvent<Void>), "VoidGameEvent");
         [Test]
         public void FindBoolGameEvent() => FindClass(typeof(GameEvent<bool>), "BoolGameEvent");
         [Test]

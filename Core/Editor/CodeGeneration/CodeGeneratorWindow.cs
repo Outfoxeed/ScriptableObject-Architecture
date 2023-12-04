@@ -5,12 +5,14 @@ namespace ScriptableObjectArchitecture.Editor.CodeGeneration
 {
     public class CodeGeneratorWindow : EditorWindow
     {
-        [SerializeField] private string _targetTypeName = "";
-        [SerializeField] private bool _useCustomNamespaceName = true;
-        [SerializeField] private string _customNamespaceName = "MyNamespace";
+        private string _targetTypeFullName = "";
+        private bool _useCustomTargetDisplayName = false;
+        private string _customTargetTypeDisplayName = ""; 
+        private bool _useCustomNamespaceName = true;
+        private string _customNamespaceName = "MyNamespace";
 
         private Vector2 _scrollPos;
-        
+
         [MenuItem(MenuItemConstants.CodeGeneratorWindow)]
         private static void ShowWindow()
         {
@@ -41,7 +43,10 @@ namespace ScriptableObjectArchitecture.Editor.CodeGeneration
             GUI.contentColor = UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 1f, 1f);
             if (GUILayout.Button("Generate"))
             {
-                CodeGenerator.Generate(_targetTypeName, _useCustomNamespaceName ? string.Empty : _customNamespaceName);
+                CodeGenerator.Generate(_targetTypeFullName,
+                    _useCustomTargetDisplayName ? _customTargetTypeDisplayName : null,
+                    _useCustomNamespaceName ? _customNamespaceName : null
+                );
             }
             GUI.contentColor = defaultColor;
         }
@@ -49,7 +54,14 @@ namespace ScriptableObjectArchitecture.Editor.CodeGeneration
         private void DrawParameters()
         {
             GUILayout.Label("Config:");
-            _targetTypeName = EditorGUILayout.TextField("Target Type Name", _targetTypeName);
+            _targetTypeFullName = EditorGUILayout.TextField("Target Type Full Name", _targetTypeFullName);
+            
+            _useCustomTargetDisplayName = EditorGUILayout.Toggle("Use Custom Target Display Name", _useCustomTargetDisplayName);
+            if (_useCustomTargetDisplayName)
+            {
+                _customTargetTypeDisplayName = EditorGUILayout.TextField("Target Type Display Name", _customTargetTypeDisplayName);
+            }
+            
             _useCustomNamespaceName = EditorGUILayout.Toggle("Use Custom Namespace Name", _useCustomNamespaceName);
             if (_useCustomNamespaceName)
             {
