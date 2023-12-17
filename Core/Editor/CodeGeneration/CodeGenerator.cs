@@ -10,7 +10,7 @@ using ScriptableObjectArchitecture.ReferenceSetters;
 using ScriptableObjectArchitecture.RuntimeSets;
 using ScriptableObjectArchitecture.VariableInstancers;
 using ScriptableObjectArchitecture.Variables;
-//using ScriptableObjectArchitecture.RuntimeSetInjectors;
+using ScriptableObjectArchitecture.RuntimeSetInjectors;
 using UnityEditor;
 using UnityEngine;
 
@@ -150,12 +150,12 @@ namespace ScriptableObjectArchitecture.Editor.CodeGeneration
             );
             
             // RuntimeSet Injector
-            //GenerateScript(
-            //    templatePath: ScriptFolderPath + SoArchMonoBehaviourTemplateRelativePath,
-            //    folderResultPath: folderPath,
-            //    parentClassName: GetClassName(typeof(RuntimeSetInjector<>)),
-            //    args: scriptGenerationArgs
-            //);
+            GenerateScript(
+                templatePath: ScriptFolderPath + SoArchMonoBehaviourTemplateRelativePath,
+                folderResultPath: folderPath,
+                parentClassName: GetClassName(typeof(RuntimeSetInjector<>)),
+                args: scriptGenerationArgs
+            );
 
             if (refreshAssetDatabase)
             {
