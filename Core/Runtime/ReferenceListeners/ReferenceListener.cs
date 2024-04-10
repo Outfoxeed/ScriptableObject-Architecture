@@ -9,6 +9,7 @@ namespace ScriptableObjectArchitecture.ReferenceListeners
     public abstract class ReferenceListener<T> : MonoBehaviour, IReferenceListener<T>
     {
         [SerializeField] private Reference<T> _variableRef;
+        [SerializeField] private float _responseDelay;
         [SerializeField] private UnityEvent<T> _response;
         private IDisposable _disposable;
         
@@ -21,7 +22,11 @@ namespace ScriptableObjectArchitecture.ReferenceListeners
             }
             
             _disposable?.Dispose();
-            _disposable = _variableRef.Subscribe(_response.Invoke);
+            
+            if (_responseDelay > 0f)
+                _disposable = _variableRef.Delay(TimeSpan.FromSeconds(_responseDelay)).Subscribe(_response.Invoke);
+            else
+                _disposable = _variableRef.Subscribe(_response.Invoke);
         }
         protected virtual void OnDisable()
         {
