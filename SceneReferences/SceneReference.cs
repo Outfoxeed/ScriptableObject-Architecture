@@ -10,7 +10,7 @@ namespace ScriptableObjectArchitecture.SceneReferences
     /// Scriptable in which is stored the name of a Scene.
     /// Has several public methods to load the registered scene
     /// </summary>
-    [CreateAssetMenu(menuName = CreateAssetMenuConstants.SceneReferencePath, order = 100)]
+    [CreateAssetMenu(menuName = SceneReferenceConstants.SceneReferencePath, order = 100)]
     public class SceneReference : ScriptableObjectArchitectureObject, ISceneReference
     {
         [SerializeField, Scene] private string _scene;
